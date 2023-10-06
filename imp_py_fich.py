@@ -37,6 +37,26 @@ def aff(g):
             f = False
 
 
+def lis(g, s):
+    f = True
+    ser = input("server ?   ")
+    if exist(ser, s):
+        while f:
+            try:
+                ch = load(g)
+                if ch["email"][ch["email"].find("@") + 1 :] == ser:
+                    print(ch["nom"])
+            except:
+                f = False
+
+
+def exist(a, s):
+    ch = s.readline()
+    while ch != "" and ch.find(a) == -1:
+        ch = s.readline()
+    return ch != ""
+
+
 f = open("NOMPR.txt", "r")
 g = open("CORDON.dat", "wb")
 gencor(g, f)
@@ -45,3 +65,8 @@ g.close()
 g = open("CORDON.dat", "rb")
 aff(g)
 g.close()
+g = open("CORDON.dat", "rb")
+s = open("SERVEUR.txt", "r")
+lis(g, s)
+g.close()
+s.close()
