@@ -26,6 +26,9 @@ def seq(ch, a, b):
 
 def score(mp):
     l = len(mp)
+    #     maj = count(mp, "A", "Z")
+    #     min = count(mp, "a", "z")
+    #     f = (l * 4 + (l - maj) * 2 + (l - min) * 3 + (l - (min + maj)) * 5 - (seq(mp, "A", "Z") + seq(mp, "a", "z")) * 2)
     f = (
         l * 4
         + (l - count(mp, "A", "Z")) * 2
