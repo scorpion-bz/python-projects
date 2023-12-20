@@ -1,6 +1,5 @@
 procédure triangle_pascal(M:mat, N:entier)
 début
-    
     si n = 0 alors
         M[0,0] = 1
     sinon
