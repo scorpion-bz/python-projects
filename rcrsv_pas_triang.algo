@@ -1,0 +1,28 @@
+procédure triangle_pascal(M:mat, N:entier)
+début
+    
+    si n = 0 alors
+        M[0,0] = 1
+    sinon
+        triangle_pascal(M,n-1)        
+        ligne(M,n)
+    fin_si
+fin
+
+procédure ligne(M:mat ,x:entier)
+début
+    si x > 0 alors
+        ligne(M,x-1)
+        M[x,0] = 1
+        M[x,x] = x
+        pour i de 1 à x-1 faire
+            M[x,i] = M[x-1,i-1] + M[x-1,i]
+        fin_pour
+    fin_si
+fin
+
+┌─────────────────────────────────────────────────┐
+│                 Nouveaux Types                  │
+├─────────────────────────────────────────────────┤
+│ mat = tableau de 20*20 entier                   │
+└─────────────────────────────────────────────────┘
